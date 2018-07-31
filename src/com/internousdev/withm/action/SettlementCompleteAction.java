@@ -14,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class SettlementCompleteAction extends ActionSupport implements SessionAware {
 
+	private int id;
 	private Map<String, Object> session;
 
 	public String execute() {
@@ -34,7 +35,8 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			count = buyProductHistoryDAO.insert(userId,
 					cartInfoDTOList.get(i).getCategoryId(),
 					cartInfoDTOList.get(i).getProductCount(),
-					cartInfoDTOList.get(i).getSubtotal());
+					cartInfoDTOList.get(i).getSubtotal(),
+					id);
 		}
 
 
@@ -61,6 +63,14 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 		}
 
 		return result;
+	}
+
+	public int getId(){
+		return id;
+	}
+
+	public void setId(int id){
+		this.id = id;
 	}
 
 	public Map<String, Object> getSession(){

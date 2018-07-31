@@ -55,6 +55,8 @@
 					</tr>
 				</table>
 
+
+
 				<input type="submit" value="新規登録"/>
 			</s:form>
 		</div>

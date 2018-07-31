@@ -12,6 +12,7 @@
 		method="execute">
 			<result name="success">cart.jsp</result>
 			<result name="error">productDetails.jsp</result>
+			<result name="login">addCartError.jsp</result>
 		</action>
 
 		<action name="AdminProductListAction" class="com.internousdev.withm.action.AdminProductListAction"
@@ -155,10 +156,16 @@
 			<result name="login">login.jsp</result>
 		</action>
 
+		<action name="SettlementConfirmAction" class="com.internousdev.withm.action.SettlementConfirmAction"
+		method="execute">
+			<result name="success">settlementConfirm.jsp</result>
+			<result name="error">settlement.jsp</result>
+		</action>
+
 		<action name="SettlementCompleteAction" class="com.internousdev.withm.action.SettlementCompleteAction"
 		method="execute">
 			<result name="success">settlementComplete.jsp</result>
-			<result name="error">settlement.jsp</result>
+			<result name="error">settlementConfirm.jsp</result>
 		</action>
 
 		<action name="UpdateProductAction" class="com.internousdev.withm.action.UpdateProductAction"

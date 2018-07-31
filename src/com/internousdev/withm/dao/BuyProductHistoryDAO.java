@@ -78,14 +78,14 @@ public class BuyProductHistoryDAO {
 	}
 
 	/* 追加 */
-	public int insert(String userId, int productId, int productCount, int productPrice) {
+	public int insert(String userId, int productId, int productCount, int productPrice, int id) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
 		int count = 0;
 
 		String sql = "INSERT INTO buy_product_history(user_id, product_id, product_count, product_price, destination_id, insert_date)"
-				+ " VALUES(?, ?, ?, ?, 1, now())";
+				+ " VALUES(?, ?, ?, ?, ?, now())";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -93,6 +93,7 @@ public class BuyProductHistoryDAO {
 			preparedStatement.setInt(2, productId);
 			preparedStatement.setInt(3, productCount);
 			preparedStatement.setInt(4, productPrice);
+			preparedStatement.setInt(5, id);
 			count = preparedStatement.executeUpdate();
 		} catch (Exception e){
 			e.printStackTrace();

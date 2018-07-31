@@ -27,6 +27,10 @@
 						<td>
 							<table>
 								<tr>
+									<th>購入日：</th>
+									<td><s:property value="insertDate"/></td>
+								</tr>
+								<tr>
 									<th>商品名：</th>
 									<td><s:property value="productName"/></td>
 								</tr>

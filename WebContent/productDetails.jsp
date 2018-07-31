@@ -66,6 +66,10 @@
 				<s:hidden name="productPrice" value="%{#session.productPrice}"/>
 				<s:hidden name="imageFileName" value="%{#session.imageFileName}"/>
 			</s:form>
+
+			<s:form action="ProductListAction">
+				<s:submit value="戻る"/>
+			</s:form>
 		</div>
 
 	</div>

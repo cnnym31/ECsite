@@ -28,6 +28,11 @@ public class AddCartAction extends ActionSupport implements SessionAware {
 		String result = ERROR;
 		String userId = String.valueOf(session.get("loginId"));
 
+		if(!session.containsKey("loginId")) {
+			result = "login";
+			return result;
+		}
+
 		CartInfoDAO cartInfoDAO = new CartInfoDAO();
 		int count = cartInfoDAO.insert(userId, productId, productCount, productPrice);
 
