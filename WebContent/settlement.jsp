@@ -34,6 +34,7 @@
 								<tr>
 									<td>
 										<input type="radio" name="id" value="<s:property value='id'/>"/>
+									</td>
 									<td>
 										<table>
 											<tr>

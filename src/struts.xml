@@ -27,6 +27,24 @@
 			<result name="error">myPage.jsp</result>
 		</action>
 
+		<action name="CreateDestinationAction" class="com.internousdev.withm.action.CreateDestinationAction"
+		method="execute">
+			<result name="success">createDestination.jsp</result>
+			<result name="error">settlement.jsp</result>
+		</action>
+
+		<action name="CreateDestinationConfirmAction" class="com.internousdev.withm.action.CreateDestinationConfirmAction"
+		method="execute">
+			<result name="success">createDestinationConfirm.jsp</result>
+			<result name="error">createDestination.jsp</result>
+		</action>
+
+		<action name="CreateDestinationCompleteAction" class="com.internousdev.withm.action.CreateDestinationCompleteAction"
+		method="execute">
+			<result name="success">createDestinationComplete.jsp</result>
+			<result name="error">createDestinationConfirm.jsp</result>
+		</action>
+
 		<action name="CreateProductAction" class="com.internousdev.withm.action.CreateProductAction"
 		method="execute">
 			<result name="success">createProduct.jsp</result>

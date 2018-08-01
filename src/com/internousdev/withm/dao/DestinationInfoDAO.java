@@ -92,27 +92,26 @@ public class DestinationInfoDAO {
 	}
 
 	/* 追加 */
-	public int insert(String userId, String password, String familyName, String firstName,
+	public int insert(String userId, String familyName, String firstName,
 			String familyNameKana, String firstNameKana, String userAddress, String telNumber) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "INSERT INTO destination_info(user_id, password, family_name, first_name,"
-				+ " family_name_kana, first_name_kana, user_address, tel_number, insert_date, admin)"
-				+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, now(), 0)";
+		String sql = "INSERT INTO destination_info(user_id, family_name, first_name,"
+				+ " family_name_kana, first_name_kana, user_address, tel_number, insert_date)"
+				+ " VALUES(?, ?, ?, ?, ?, ?, ?, now())";
 
 		int count = 0;
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, userId);
-			preparedStatement.setString(2, password);
-			preparedStatement.setString(3, familyName);
-			preparedStatement.setString(4, firstName);
-			preparedStatement.setString(5, familyNameKana);
-			preparedStatement.setString(6, firstNameKana);
-			preparedStatement.setString(7, userAddress);
-			preparedStatement.setString(8, telNumber);
+			preparedStatement.setString(2, familyName);
+			preparedStatement.setString(3, firstName);
+			preparedStatement.setString(4, familyNameKana);
+			preparedStatement.setString(5, firstNameKana);
+			preparedStatement.setString(6, userAddress);
+			preparedStatement.setString(7, telNumber);
 			count = preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

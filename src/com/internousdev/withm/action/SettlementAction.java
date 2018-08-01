@@ -38,6 +38,8 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 
 		session.put("destinationInfoDTOList", destinationInfoDTOList);
 
+		System.out.println(destinationInfoDTOList.size());
+
 		result = SUCCESS;
 		return result;
 	}
